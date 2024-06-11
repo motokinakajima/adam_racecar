@@ -20,3 +20,14 @@ wall_follow.py => wallfollow + turn left, both sides.
 main_3.py => main program for sim.
 
 wall_follow4.py => right angle curve
+
+#memos
+## cone HSV
+((74,98,0),(118,255,255))
+
+## cone regression
+y = 2174.2984490852577 / x**0.5 + 0.07838245131948973
+
+## line hsv
+### 6th floor
+((68,49,131),(100,184,255))
