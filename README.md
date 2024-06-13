@@ -37,30 +37,30 @@ y = 2174.2984490852577 / x**0.5 + 0.07838245131948973
 ## 蛇行の改善案
 
 ### angleが小さい場合に無視をする
-
+```python
 if angle > -0.05 and angle < 0.05:
     angle = 0
-
+```
 ### angleの1updateあたりの可動域を設定する
-
+```python
 if abs(prev_angle - angle) > 0.1:
     if prev_angle - angle < 0:
         angle = prev_angle - 0.1
     else:
         angle = prev_angle + 0.1
-
+```
 ### 過去のangleとの平均を取る
-
+```python
 angle = (prev_angle + angle) / 2
-
+```
 ### angleの加重平均をとる
-
+```python
 angle = 0.7 * angle + 0.3 * prev_angle
-
+```
 ### angleの非線形マッピングをする
-
+```python
 angle = np.tanh(angle * gain_factor)
-
+```
 ## PID classの改善案
 
 ### 積分のWindup対策
